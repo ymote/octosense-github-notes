@@ -48,12 +48,27 @@ unknown; check GitHub before another approved attempt.
 
 ## Agents and other recipients
 
-There is no model call, chat agent, background scheduler, telemetry endpoint or
-publisher data upload in this app. It declares three host-backed read aliases
-for repositories, file metadata and note content. All are `private_data: true`,
-`shareable: false` and `background: false`; no credential, commit or approval tool
-is exposed. Access remains subject to host app/account authorization. No
-brokered-agent execution was proven by the provider fixture tests.
+The app has no in-app Chat interface, direct model calls, background scheduler,
+telemetry endpoint or publisher data upload. The OctoSense shell separately
+recognizes this bundle's `tools.json` and offers **Ask GitHub Notes**. That optional
+host-provided agent requires separate consent; installing the app or connecting
+GitHub does not grant that consent. You can decline it or turn it off in
+OctoSense's Assistant settings and still edit notes manually.
+
+If you use the shell agent, your questions, conversation context and permitted
+tool results may be sent to the model/provider configured in OctoSense. This can
+include repository names, file metadata, note contents and Markdown you include
+in the conversation. That content may leave your device and is subject to the
+configured provider's data practices; it is not sent to a publisher-operated
+model service. Review the host's agent disclosure and provider settings before
+using Ask with private information.
+
+The bundle declares three host-backed read aliases for repositories, file
+metadata and note content. All are `private_data: true`, `shareable: false` and
+`background: false`; no credential, commit or approval tool is exposed. Access
+remains subject to host agent, app and account authorization. The shell's Ask
+surface and brokered tool execution were not validated by this app's provider
+fixture tests; this disclosure describes the host code, not a live-model test.
 
 Remote Markdown images are retained as text and are not fetched by this editor.
 Opening the external authorization browser is subject to GitHub and browser
@@ -82,3 +97,8 @@ Source: [app](bundle/main.splash), [manifest](bundle/manifest.json),
 [connection store](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/store.rs),
 [GitHub API](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/api.rs) and
 [review service](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/host_api.rs).
+
+The optional shell agent is defined by the versioned host's
+[agent discovery](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/apps.rs),
+[consent and peer preparation](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/agents.rs)
+and [Ask conversation](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/app_chat/mod.rs).

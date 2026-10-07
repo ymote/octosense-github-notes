@@ -37,10 +37,22 @@ GitHub 权限。
 
 ## 代理与其他接收方
 
-应用没有模型调用、聊天代理、后台调度、统计端点或向发布者上传数据的逻辑。
-三个宿主只读别名提供仓库列表、文件元数据和笔记读取；均为 `private_data: true`、
-`shareable: false`、`background: false`，没有凭据、写入或审批工具。
-访问仍受宿主应用和账户授权限制。模拟提供商测试没有证明代理转发执行路径。
+应用没有内置 Chat 界面、直接模型调用、后台调度、统计端点或向发布者上传数据的逻辑。
+OctoSense 系统界面会另行识别本包的 `tools.json`，并提供 **Ask GitHub Notes**。
+这是宿主提供的可选代理，需要单独授权；安装应用或连接 GitHub 不会自动授予此项授权。
+你可以拒绝，或在 OctoSense 的 Assistant 设置中关闭代理，同时继续手动编辑笔记。
+
+使用该宿主代理时，你的问题、对话上下文和允许读取的工具结果可能发送给
+OctoSense 中配置的模型及其提供商，包括仓库名称、文件元数据、笔记内容，
+以及你在对话中提供的 Markdown。这些内容可能离开设备，并受所选提供商的数据政策约束；
+它们不会发送给发布者运营的模型服务。使用 Ask 处理私密信息前，请阅读宿主的代理
+权限说明和模型提供商设置。
+
+本包声明三个宿主只读别名，提供仓库列表、文件元数据和笔记读取；
+均为 `private_data: true`、`shareable: false`、`background: false`，
+没有凭据、写入或审批工具。访问仍受宿主代理、应用和账户授权限制。
+本应用的模拟提供商测试没有验收宿主 Ask 界面或代理转发工具执行；
+这里描述的是宿主代码行为，不是真实模型测试结果。
 
 远程 Markdown 图片保留为文本，编辑器不会加载其像素。外部授权浏览器受 GitHub
 和浏览器政策约束。OctoSense 的其他功能及用户安装的集成可能另有数据行为，
@@ -63,3 +75,8 @@ GitHub 权限。
 [连接存储](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/store.rs)、
 [GitHub API](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/api.rs)和
 [审阅服务](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/oauth-service/src/host_api.rs)。
+
+宿主的可选代理由固定版本的
+[代理发现](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/apps.rs)、
+[授权与代理准备](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/agents.rs)及
+[Ask 对话](https://github.com/OctoSense-org/OctoSense/blob/4109d59db899525c7caa2229cd4117d62bc720d5/crates/shell/src/app_chat/mod.rs)代码定义。
