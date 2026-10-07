@@ -1,6 +1,6 @@
 # GitHub Notes 隐私说明
 
-[English](PRIVACY.md) · 适用于 0.1.0 · 2026-10-06
+[English](PRIVACY.md) · 适用于 0.1.1 · 2026-10-07
 
 发布者：**ymote**。本文说明本仓库代码及所需 OctoSense 宿主服务的行为；
 真实 GitHub 登录和写入仍待验收。应用没有发布者运营的后端或统计端点，
@@ -38,7 +38,8 @@ GitHub 权限。
 ## 代理与其他接收方
 
 应用没有内置 Chat 界面、直接模型调用、后台调度、统计端点或向发布者上传数据的逻辑。
-OctoSense 系统界面会另行识别本包的 `tools.json`，并提供 **Ask GitHub Notes**。
+OctoSense 系统界面会读取本包显式的前台 `agent` 声明、`AGENT.md` 和私有只读工具，
+并提供 **Ask GitHub Notes**。
 这是宿主提供的可选代理，需要单独授权；安装应用或连接 GitHub 不会自动授予此项授权。
 你可以拒绝，或在 OctoSense 的 Assistant 设置中关闭代理，同时继续手动编辑笔记。
 

@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "version": "0.1.1",
+  "app_id": "org.octosense.samples.githubnotes",
+  "bundle_digest": "81dd860d3a1bea9dae5efa45e130f88c86edb99db9df84305622b972472db965",
+  "signed": false,
+  "catalog_published": false,
+  "hub_binary_sha256": "dfbd4c7940e0446b2a636c4a9f98d84a9515bcfd72f2e11b0df41045f351e4cf",
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "passed": 3,
+    "scope": "Declaration and immutable UI/screenshot provenance; not live agent/provider execution"
+  },
+  "gate": "org.octosense.samples.githubnotes 0.1.1 \u2014 PASSED\n  [warning] publisher-signature: unsigned: accountability rests on the hub alone\n  grants: capabilities {\"auth\", \"github\", \"storage\"}, hosts {}, storage 4194304 bytes, agent read-only",
+  "scan_questions": 8,
+  "prior_signed_records_sha256": {
+    "GATE.txt": "a73730a99cc4ad063575342a2508811714e40c9d47442d34dba2d82831c7ccda",
+    "GATE.json": "157aaf87daa8e360920f5d0dc170a804c8311bcfb20761b45b5606833152da92",
+    "RELEASE.json": "4097c64a36434db9a561127f47b198c1c8d0e2c927b2518d46291fbe466b8015",
+    "QUESTIONS.json": "57c0138fe30636603b9cf008143a6300477676d2f717c406203eb75d02d494d5"
+  },
+  "native_ui_changed": false,
+  "native_ui_rerun": false,
+  "live_provider_or_model_calls": false,
+  "publication": "The designated publisher must sign exact final bytes and publish a new immutable tag/catalog entry.",
+  "negative_gate": "Removing agent while AGENT.md remains is refused: agent.instructions does not name it.",
+  "hub_checkout_revision": "5c7a13f92fa25d36ba1fe7fb99dc9fb1b235f8d3"
+}

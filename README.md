@@ -5,10 +5,10 @@
 Write Markdown in OctoSense with the Rinx article writer, keep recoverable local
 drafts, and review an exact GitHub commit before saving it. No separate OctoSense
 cloud account is needed. Publisher: **ymote**. App ID:
-`org.octosense.samples.githubnotes`, version `0.1.0`.
+`org.octosense.samples.githubnotes`, version `0.1.1` (release candidate).
 
 **macOS Apple Silicon preview.** Install [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2),
-which includes the connected services and native Markdown editor. This app's
+which includes the connected services and native Markdown editor. The previous
 signed `0.1.0` bundle is available in the official App Hub catalog (first admission:
 [sequence 7, App Hub #125](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/125)). Generic `card-host` cannot run this editor.
 Live GitHub authorization and repository writes remain unverified.
@@ -17,7 +17,8 @@ Live GitHub authorization and repository writes remain unverified.
 
 1. In OctoSense, open **App Hub → Search**, search **GitHub Notes**, then choose
    **Get → Install → Open** after reviewing the requested permissions.
-   This repository's signed `bundle/` is the same application artifact.
+   The current `0.1.1` candidate needs its own signature and catalog admission;
+   the previous `v0.1.0` tag remains immutable.
 2. Write locally using Source, Split or Preview; narrow windows alternate Source
    and Preview. The palette also offers the rich block editor and undo/redo.
 3. The back/file icon opens **Repository & file**. Connect GitHub through the host
@@ -40,8 +41,9 @@ GitHub commits. See [Privacy](PRIVACY.md).
 ## Verify a release
 
 A publisher-signed release includes `publisher.json` and the signed check output
-in `review/GATE.txt` / `review/GATE.json`, with release and question records in
-`review/RELEASE.json` / `review/QUESTIONS.json`. Read the public key from
+under `review/`, with versioned release and question records. Prior `0.1.0`
+records are preserved in `review/releases/0.1.0/`; they do not verify this
+unsigned `0.1.1` candidate. The designated publisher adds its new records after signing. Read the public key from
 `publisher.json`, then verify the unchanged bundle:
 
 ```sh
@@ -107,7 +109,7 @@ They are not new execution evidence for that new digest.
 The editor has a 512 KiB document limit. Rinx Matrix publication, image upload and
 remote image fetching are not included. This app has no in-app Chat, direct model
 calls or Glance publication. OctoSense offers an optional, separately consented
-**Ask GitHub Notes** agent because the bundle declares tools. If used, your
+**Ask GitHub Notes** agent explicitly declared in the manifest and [AGENT.md](bundle/AGENT.md). If used, your
 questions, conversation context and permitted tool results may be sent to the
 host-configured model; see [Privacy](PRIVACY.md). This shell-agent path remains
 unverified here. Its three private-data read aliases in [tools.json](bundle/tools.json)
@@ -118,3 +120,13 @@ claim for this bundle; the listing declares **macos only**.
 
 [Support](SUPPORT.md) · [Privacy](PRIVACY.md) · [Attribution](NOTICE) ·
 [Apache-2.0](LICENSE)
+
+## 0.1.1 agent declaration
+
+The optional assistant is now explicitly foreground-only and read-only in the
+manifest, with declared instructions. It keeps the same three private read
+tools; it cannot edit the local draft, commit, approve or run in the background.
+The guidance distinguishes remote saved Markdown from an unsaved editor draft
+and treats repository content as untrusted data. Editor and screenshot bytes
+are unchanged. Run `python3 -m unittest discover -s tests -v` for declaration
+and provenance checks. Model/broker execution still needs separate acceptance.
