@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "app_id": "org.octosense.samples.githubnotes",
+  "version": "0.1.1",
+  "publisher": "ymote",
+  "public_key": "dbda2ca2b6376e8a4bb9d011d6f9aab0f2953021ab9e433215fa1094828761bc",
+  "bundle_digest": "81dd860d3a1bea9dae5efa45e130f88c86edb99db9df84305622b972472db965",
+  "signed_gate_passed": true,
+  "scan_questions": 8,
+  "source_tag": "v0.1.1",
+  "candidate_source_url": "https://github.com/ymote/octosense-github-notes/commit/70a975851d60294a328af3676e5a94c413493d7b",
+  "hub_source_url": "https://github.com/OctoSense-org/OctoSense-App-Hub/commit/b0856ed2792de87db87866b62d33a0206d8f3c34",
+  "hub_binary_sha256": "f86581c545eb4af5aec8b48c5adc9eff5131c239217f508cdb62ae88d7d7bf2b",
+  "catalog_review_base": {
+    "sequence": 7,
+    "sha256": "bc03502649724e6a603ea5d99e62981a3387a5b07d5e8f1195ea340036b61f2d"
+  },
+  "catalog_published": false,
+  "release_files_sha256": {
+    "AGENT.md": "9c16b819c5da2a985ea272640993ab6860ce6344c8b2b03de466fe3bad5b794b",
+    "assets/icon.svg": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+    "listing.json": "b31639e790b96b8ee21fcd18c461fd860a87314efb5d7afec9e8379aa5f789f5",
+    "main.splash": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+    "manifest.json": "49dc25e5d645a129785ff8d885cd75f1f7d606f5b5e76204748aa245309f779d",
+    "screenshots/01-preview.png": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+    "screenshots/02-editor.png": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+    "tools.json": "768ab5450ab763cc2d67b60eb7d4f50e13662c028936db26694df9996230ab1a"
+  },
+  "review_files_sha256": {
+    "GATE.txt": "0c180486e926c16d7afd433be4ba3aeff5aee2aeb5bb8c09829407793138d272",
+    "GATE.json": "625ec9783074b15f40781e76629be16cd8a175f5359deb570b1d3074a6f59397",
+    "QUESTIONS.json": "57c0138fe30636603b9cf008143a6300477676d2f717c406203eb75d02d494d5"
+  },
+  "validation_boundary": "Signed structural gate and scan packet generation passed with publisher continuity. Declaration/provenance tests pass; UI and original screenshots are unchanged. No new native, live provider, broker or model execution is claimed. Official catalog admission is pending."
+}

@@ -4,7 +4,7 @@
 
 在 OctoSense 中使用 Rinx 文章编辑器编写 Markdown，保留可恢复的本地草稿，
 并在保存到 GitHub 前审阅完整提交内容。不需要另建 OctoSense 云账户。
-发布者：**ymote**；应用 ID：`org.octosense.samples.githubnotes`；版本：`0.1.1`（发布候选）。
+发布者：**ymote**；应用 ID：`org.octosense.samples.githubnotes`；版本：`0.1.1`（发布者已签名预览）。
 
 **macOS Apple Silicon 预览版。** 安装 [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2)，
 其中已包含连接服务和原生 Markdown 编辑器。之前的签名版本 `0.1.0` 已进入官方
@@ -14,7 +14,7 @@ App Hub 目录，首次收录为[目录序号 7，App Hub #125](https://github.c
 ## 使用
 
 1. 在 OctoSense 中打开 **App Hub → Search**，搜索 **GitHub Notes**，审阅权限后依次
-   点击 **Get → Install → Open**。当前 `0.1.1` 候选仍需签名和目录准入；之前的 `v0.1.0` 标签保持不变。
+   点击 **Get → Install → Open**。当前 `0.1.1` 已由发布者签名，仍需目录准入；之前的 `v0.1.0` 标签保持不变。
 2. 在 Source、Split、Preview 中编写和预览；窄窗口在 Source 和 Preview 之间切换。
    样式面板还提供富文本块编辑、撤销和重做。
 3. 左上返回/文件图标打开 **Repository & file**。通过宿主弹层及外部浏览器连接 GitHub。
@@ -33,8 +33,8 @@ App Hub 目录，首次收录为[目录序号 7，App Hub #125](https://github.c
 ## 验证发布版本
 
 发布者签名版本包含 `publisher.json` 及 `review/` 下的签名、发布和问题记录。
-旧记录已归档到 `review/releases/0.1.0/`，不能验证当前无签名的 0.1.1 候选。
-指定发布者签名后补充新记录。读取 `publisher.json` 中的公钥后，检查原样已签名包：
+旧记录已归档到 `review/releases/0.1.0/`，不能验证当前已签名的 0.1.1 更新。
+新的签名检查、发布及问题记录位于 `review/GATE.txt`、`review/RELEASE.json` 和 `review/QUESTIONS.json`。读取 `publisher.json` 中的公钥后，检查原样已签名包：
 
 ```sh
 HUB=hub # or the path to a compatible hub binary
@@ -87,12 +87,12 @@ hub scan bundle --packet build/review-packet.json
 Unicode 编辑、取消、模拟新建/更新提交、冲突、不确定响应和离线重启。
 [编辑器持续测试](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/tools/connected-e2e/evidence/notes-rinx-soak-20261006/README.md)
 记录了恢复保护修复前的十分钟 36 轮测试，以及修复后的 12 轮回归。
-这些历史记录保留原来源摘要；本仓库仅调整发布信息，因此应用摘要也发生变化，
+这些历史记录保留原来源摘要；0.1.1 调整代理声明、指导与发布信息，应用摘要也发生变化，
 不能把历史记录称为新摘要的重新执行证据。
 
 编辑器文档上限为 512 KiB。不包含 Rinx 的 Matrix 发布、图片上传或远程图片加载。
-应用不包含内部 Chat、直接模型调用或 Glance 发布。由于应用声明了工具，OctoSense
-还提供需要单独授权的可选 **Ask GitHub Notes** 代理。使用时，问题、对话上下文
+应用不包含内部 Chat、直接模型调用或 Glance 发布。manifest 和 `AGENT.md` 明确声明仅前台、只读的可选代理，OctoSense
+提供需要单独授权的可选 **Ask GitHub Notes** 代理。使用时，问题、对话上下文
 及获准读取的工具结果可能会发送给宿主配置的模型；参见[隐私说明](PRIVACY.zh-CN.md)。
 本次尚未验证这一 Shell 代理路径。三个[只读工具别名](bundle/tools.json)
 标记为私有数据、仅前台、不可共享；没有写入或审批工具。

@@ -84,13 +84,12 @@ is not evidence of provider execution.
 
 ## 8. Route: pass, human-review, or reject. Give reasons a publisher can act on.
 
-human-review. The unsigned structural gate passed with only the expected
-publisher-signature warning. All eight scan questions are answered here, but
+human-review. The final signed structural gate passed against the existing catalog and recorded ymote key, with no publisher-signature warning. All eight scan questions are answered here, but
 no external reviewer verdict was generated. A maintainer must review this update, the required host changes and the preview limitations. Publisher
-signing, immutable release commit/tag and the public submission are separate
-steps; the publisher records the signed gate separately in `review/GATE.txt`
+signing is complete; the immutable release commit/tag and public submission remain separate
+steps. The publisher records the signed gate separately in `review/GATE.txt`
 and `review/GATE.json`, with its release metadata in `review/RELEASE.json`.
-This unsigned preparation result does not replace that release verification.
+The historical unsigned result in `VALIDATION-0.1.1.json` does not replace that signed verification.
 Live OAuth/read/write still need a registered device-flow client, user
 consent and an explicitly selected disposable repository/branch/path. Do not
 promote synthetic results to live acceptance or add untested platforms.

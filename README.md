@@ -5,7 +5,7 @@
 Write Markdown in OctoSense with the Rinx article writer, keep recoverable local
 drafts, and review an exact GitHub commit before saving it. No separate OctoSense
 cloud account is needed. Publisher: **ymote**. App ID:
-`org.octosense.samples.githubnotes`, version `0.1.1` (release candidate).
+`org.octosense.samples.githubnotes`, version `0.1.1` (publisher-signed preview).
 
 **macOS Apple Silicon preview.** Install [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2),
 which includes the connected services and native Markdown editor. The previous
@@ -17,7 +17,7 @@ Live GitHub authorization and repository writes remain unverified.
 
 1. In OctoSense, open **App Hub → Search**, search **GitHub Notes**, then choose
    **Get → Install → Open** after reviewing the requested permissions.
-   The current `0.1.1` candidate needs its own signature and catalog admission;
+   The publisher-signed `0.1.1` update still needs catalog admission;
    the previous `v0.1.0` tag remains immutable.
 2. Write locally using Source, Split or Preview; narrow windows alternate Source
    and Preview. The palette also offers the rich block editor and undo/redo.
@@ -43,7 +43,8 @@ GitHub commits. See [Privacy](PRIVACY.md).
 A publisher-signed release includes `publisher.json` and the signed check output
 under `review/`, with versioned release and question records. Prior `0.1.0`
 records are preserved in `review/releases/0.1.0/`; they do not verify this
-unsigned `0.1.1` candidate. The designated publisher adds its new records after signing. Read the public key from
+signed `0.1.1` update. Its new records are [review/GATE.txt](review/GATE.txt),
+[review/RELEASE.json](review/RELEASE.json) and [review/QUESTIONS.json](review/QUESTIONS.json). Read the public key from
 `publisher.json`, then verify the unchanged bundle:
 
 ```sh
@@ -103,7 +104,8 @@ existing/new commits, conflicts, uncertain responses and offline restart.
 The [writer soak](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/tools/connected-e2e/evidence/notes-rinx-soak-20261006/README.md)
 records 36 cycles over ten minutes before the failed-load recovery guard and a
 12-cycle regression afterward. These records retain their original source
-hashes; this repository changes listing metadata and consequently the digest.
+hashes; 0.1.1 changes agent declarations, guidance and release metadata, so its
+bundle digest differs.
 They are not new execution evidence for that new digest.
 
 The editor has a 512 KiB document limit. Rinx Matrix publication, image upload and

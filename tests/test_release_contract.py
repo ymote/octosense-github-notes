@@ -14,7 +14,8 @@ class ReleaseContract(unittest.TestCase):
         agent = manifest['agent']
         self.assertEqual(agent['profile'], 'read-only')
         self.assertEqual(agent['tools'], [])
-        self.assertFalse(agent['background'])
+        # hub sign-manifest omits the contract's default false value.
+        self.assertFalse(agent.get('background', False))
         self.assertFalse(agent.get('triggers'))
         self.assertEqual(agent['model']['needs'], ['tool_calling'])
         self.assertEqual(agent['instructions'], 'AGENT.md')
