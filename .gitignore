@@ -1,0 +1,28 @@
+# Build products, test output and local app state
+/build/
+/target/
+/.local-state/
+/.host/
+/profiles/
+/.profiles/
+/fixtures-local/
+/keys/
+/.keys/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+.DS_Store
+# Provider/signing secrets never belong in this repository
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+clients.json
+tokens.json
+publisher.key

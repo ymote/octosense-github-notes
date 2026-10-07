@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "stage": "unsigned standalone packaging preparation",
+  "scope": "Listed candidate files, excluding .git, ignored build reports and this self-report; publisher release files may be added later",
+  "scanned_files": [
+    ".gitignore",
+    "AGENTS.md",
+    "LICENSE",
+    "NOTICE",
+    "PRIVACY.md",
+    "PRIVACY.zh-CN.md",
+    "README.md",
+    "README.zh-CN.md",
+    "SUPPORT.md",
+    "bundle/assets/icon.svg",
+    "bundle/listing.json",
+    "bundle/main.splash",
+    "bundle/manifest.json",
+    "bundle/screenshots/01-preview.png",
+    "bundle/screenshots/02-editor.png",
+    "bundle/tools.json",
+    "review/ANSWERS.md",
+    "review/PROVENANCE.json"
+  ],
+  "file_count": 18,
+  "findings": [],
+  "rules_checked": [
+    "private_key",
+    "provider_token",
+    "local_user_path",
+    "credential_value",
+    "email_address"
+  ],
+  "png_metadata": "No tEXt/iTXt/zTXt/eXIf chunks; both original native screenshots visually inspected",
+  "internal_document_links": "passed",
+  "source_worktree_unchanged": true,
+  "not_a_guarantee": "Targeted local scan and visual review, not proof that all future files or every possible secret format are covered."
+}

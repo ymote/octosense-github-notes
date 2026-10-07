@@ -1,0 +1,30 @@
+GitHub Notes
+
+Based on the GitHub Notes connected-app sample in OctoScript-App-Design-Flow.
+Copyright 2026 The OctoSense Authors.
+Source revision: 5b0fde7ed0e9e4131751d16f55ba3d8a3180dd95.
+The copied app source is licensed under Apache-2.0; see LICENSE.
+
+This standalone packaging changes listing publisher/support/privacy metadata
+and release wording, recalculates the manifest digest, and adds repository
+documentation. The app program, tool declaration, app icon and native listing
+screenshots are unchanged. See review/PROVENANCE.json.
+
+The required OctoSense host supplies the Rinx-derived MarkdownEditor; neither
+its native binary nor Rinx's source/icons/fonts are bundled here as runtime
+assets. The screenshots depict that editor with fictional notes. Rinx article
+components are pinned by the host at 4b89097d8791a7190d01de1c576979c93df0013d.
+Rinx code is Apache-2.0; inherited Robrix portions retain MIT attribution. The
+host's icon collection has mixed upstream asset terms: Apache-2.0 is not a
+blanket relicensing of icons visible in screenshots. Preserve the host's
+upstream notices when distributing that host.
+
+Exact host attribution and preserved upstream licenses/notices:
+https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/markdown-editor/resources/NOTICE.md
+https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/markdown-editor/resources/NOTICE-RINX
+https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/markdown-editor/resources/LICENSE-RINX
+https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/markdown-editor/resources/LICENSE-RINX-MIT
+https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/crates/markdown-editor/resources/ATTRIBUTIONS-RINX.md
+
+GitHub and Rinx names identify integrations and source components. This app
+is not an official GitHub product, and no trademark rights are granted.

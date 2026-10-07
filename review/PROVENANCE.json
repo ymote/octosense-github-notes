@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "stage": "unsigned standalone packaging preparation before publisher signing",
+  "app_id": "org.octosense.samples.githubnotes",
+  "version": "0.1.0",
+  "publisher": "ymote",
+  "source": {
+    "repository": "https://github.com/OctoSense-org/OctoScript-App-Design-Flow",
+    "revision": "5b0fde7ed0e9e4131751d16f55ba3d8a3180dd95",
+    "path": "examples/connected-apps/github-notes",
+    "method": "git ls-tree allowlist + git show of exact tracked blobs; no local profiles/build outputs copied"
+  },
+  "required_runtime": {
+    "repository": "https://github.com/OctoSense-org/OctoSense",
+    "revision": "26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3",
+    "pull_request": 347,
+    "hub_pull_request": 119
+  },
+  "copied_files": [
+    {
+      "source": "examples/connected-apps/github-notes/bundle/assets/icon.svg",
+      "path": "bundle/assets/icon.svg",
+      "source_sha256": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+      "packaged_sha256": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+      "unchanged": true
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/listing.json",
+      "path": "bundle/listing.json",
+      "source_sha256": "6cee0965ca62dc5bad92ac9102dcd11a702365f9b837a2090e7d28b1da766298",
+      "packaged_sha256": "bfd9217c9c0874cf8d7ae19cc2a52af6065d67e42f1608fa48385e1524ea3d68",
+      "unchanged": false
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/main.splash",
+      "path": "bundle/main.splash",
+      "source_sha256": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+      "packaged_sha256": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+      "unchanged": true
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/manifest.json",
+      "path": "bundle/manifest.json",
+      "source_sha256": "f36c461bd813c04a7b8436127e8057b13cf9a3bad40ad25933bcd2dc050218a4",
+      "packaged_sha256": "215e61670579dd764e7edd5ece6f8f47b091dcdf6ce74c0fcb5348a9eff0fe3b",
+      "unchanged": false
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/screenshots/01-preview.png",
+      "path": "bundle/screenshots/01-preview.png",
+      "source_sha256": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+      "packaged_sha256": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+      "unchanged": true
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/screenshots/02-editor.png",
+      "path": "bundle/screenshots/02-editor.png",
+      "source_sha256": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+      "packaged_sha256": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+      "unchanged": true
+    },
+    {
+      "source": "examples/connected-apps/github-notes/bundle/tools.json",
+      "path": "bundle/tools.json",
+      "source_sha256": "768ab5450ab763cc2d67b60eb7d4f50e13662c028936db26694df9996230ab1a",
+      "packaged_sha256": "768ab5450ab763cc2d67b60eb7d4f50e13662c028936db26694df9996230ab1a",
+      "unchanged": true
+    },
+    {
+      "source": "LICENSE",
+      "path": "LICENSE",
+      "source_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "packaged_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "unchanged": true
+    }
+  ],
+  "changes": [
+    "listing publisher name, support URL, privacy URL and release wording",
+    "manifest integrity restamped after listing change",
+    "new repository documentation and review material outside bundle"
+  ],
+  "original_bundle_blake3": "a00115ba96985140dc4382323d936c1c5e09539d24e0c772e2ddd608ea5e1c7d",
+  "packaged_bundle_blake3": "d5565438b78e01b98baf268661087b7efd0f5c01799f4841daa140955f82a13b",
+  "digest_note": "Unsigned preparation snapshot. Publisher signing changes manifest bytes; final release verification is recorded separately. Historical native receipts retain their original digest/source hashes; no new native run claimed.",
+  "screenshots": [
+    {
+      "path": "bundle/screenshots/02-editor.png",
+      "sha256": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+      "width": 860,
+      "height": 1700,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ],
+      "original_native_pixels_inspected": true,
+      "content": "fictional notes"
+    },
+    {
+      "path": "bundle/screenshots/01-preview.png",
+      "sha256": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+      "width": 860,
+      "height": 1700,
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ],
+      "original_native_pixels_inspected": true,
+      "content": "fictional notes"
+    }
+  ],
+  "local_checks": {
+    "unsigned_gate": "passed; only unsigned publisher-signature warning",
+    "scan_question_count": 8,
+    "review_route": "human-review (publisher self-review; no external verdict)",
+    "hub_source_revision": "5c7a13f92fa25d36ba1fe7fb99dc9fb1b235f8d3",
+    "hub_binary_sha256": "ee623dc0995fa73c2af9d9107bd2ac1408b7e84ef1fdac80bf461574f45970d8",
+    "exact_app_tools_icon_screenshots_preserved": true
+  },
+  "limitations": [
+    "macos preview only",
+    "requires compatible connected-services host, not generic card-host",
+    "no live GitHub OAuth or repository write validation",
+    "no physical approval or brokered tool execution claim",
+    "no public catalog admission claim",
+    "native histories linked at immutable original revisions, not relabeled as new-digest execution"
+  ]
+}

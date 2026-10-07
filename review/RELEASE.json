@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "app_id": "org.octosense.samples.githubnotes",
+  "version": "0.1.0",
+  "publisher": "ymote",
+  "public_key": "dbda2ca2b6376e8a4bb9d011d6f9aab0f2953021ab9e433215fa1094828761bc",
+  "bundle_digest": "d5565438b78e01b98baf268661087b7efd0f5c01799f4841daa140955f82a13b",
+  "hub_revision": "5c7a13f92fa25d36ba1fe7fb99dc9fb1b235f8d3",
+  "hub_binary_sha256": "ee623dc0995fa73c2af9d9107bd2ac1408b7e84ef1fdac80bf461574f45970d8",
+  "upstream_flow_revision": "5b0fde7ed0e9e4131751d16f55ba3d8a3180dd95",
+  "required_runtime_revision": "26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3",
+  "official_catalog_sequence": 4,
+  "official_catalog_sha256": "71a2703b93b283aee6d30fa0f1d4b58a9a4e5a025a9a55f7f73c7c8c67a9deee",
+  "signed_gate_passed": true,
+  "scan_questions": 8,
+  "preserved_upstream_files_sha256": {
+    "assets/icon.svg": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+    "main.splash": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+    "screenshots/01-preview.png": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+    "screenshots/02-editor.png": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+    "tools.json": "768ab5450ab763cc2d67b60eb7d4f50e13662c028936db26694df9996230ab1a"
+  },
+  "release_files_sha256": {
+    "assets/icon.svg": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+    "listing.json": "bfd9217c9c0874cf8d7ae19cc2a52af6065d67e42f1608fa48385e1524ea3d68",
+    "main.splash": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+    "manifest.json": "425594fff3ddca732312c2c4e341ff8a4bbd14e34cec57d9a0a03131b0fbf30a",
+    "screenshots/01-preview.png": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+    "screenshots/02-editor.png": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+    "tools.json": "768ab5450ab763cc2d67b60eb7d4f50e13662c028936db26694df9996230ab1a"
+  },
+  "validation_boundary": "Publisher metadata and signature finalized; functional source and original screenshots are byte-identical to the linked historical evidence. Live provider acceptance and official App Hub admission remain pending."
+}
