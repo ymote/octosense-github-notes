@@ -26,3 +26,6 @@ credentials.json
 clients.json
 tokens.json
 publisher.key
+
+**/__pycache__/
+*.pyc

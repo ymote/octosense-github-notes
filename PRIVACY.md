@@ -1,6 +1,6 @@
 # GitHub Notes privacy
 
-[简体中文](PRIVACY.zh-CN.md) · Applies to version 0.1.0 · 2026-10-06
+[简体中文](PRIVACY.zh-CN.md) · Applies to version 0.1.1 · 2026-10-07
 
 Publisher: **ymote**. This describes the code in this repository and its required
 OctoSense host services; live GitHub authorization/write acceptance is still
@@ -50,7 +50,8 @@ unknown; check GitHub before another approved attempt.
 
 The app has no in-app Chat interface, direct model calls, background scheduler,
 telemetry endpoint or publisher data upload. The OctoSense shell separately
-recognizes this bundle's `tools.json` and offers **Ask GitHub Notes**. That optional
+reads the explicit foreground `agent` declaration, `AGENT.md` and
+private read tools in this bundle and offers **Ask GitHub Notes**. That optional
 host-provided agent requires separate consent; installing the app or connecting
 GitHub does not grant that consent. You can decline it or turn it off in
 OctoSense's Assistant settings and still edit notes manually.

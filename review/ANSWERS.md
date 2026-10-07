@@ -1,6 +1,6 @@
 # App Hub review answers
 
-Publisher self-review for GitHub Notes 0.1.0. This is not a maintainer verdict.
+Publisher self-review for GitHub Notes 0.1.1. This is not a maintainer verdict.
 The exact questions below come from the local `hub scan` packet; the packet
 and structural gate output remain in ignored `build/`, outside the bundle.
 
@@ -20,8 +20,8 @@ The native editor comes from the compatible OctoSense runtime, not this bundle.
 
 Yes: productivity describes Markdown notes and reviewed repository saves.
 The listing declares only `macos`. Historical native macOS fixtures support this
-scoped preview, not live-provider readiness. It requires OctoSense #347 and Hub
-#119. Android test-APK evidence does not add an Android listing claim; Linux and
+scoped preview, not live-provider readiness. The connected-services baseline ships in desktop-v0.1.0-beta.2 for macOS
+Apple Silicon. Android test-APK evidence does not add an Android listing claim; Linux and
 Windows UI are unverified. Generic card-host is insufficient.
 
 ## 3. Do the granted capabilities match what the app visibly does? For a script app, name every host it requests and why. Name any grant nothing on screen needs.
@@ -53,8 +53,10 @@ is not an official GitHub product.
 No assistant-directed instruction appears in the app UI/data. Comments and
 function names describe implementation. Tool descriptions describe the three
 read operations and explicitly distinguish opaque connection handles from
-provider tokens. User-loaded Markdown is untrusted content; this app does not
-send it to a model. Repository contributor instructions and this review packet
+provider tokens. User-loaded Markdown is untrusted content. The editor makes no direct model
+call; separately consented Ask may send requested read results and conversation
+context to the host-configured model, as disclosed in the listing and privacy policy. Repository contributor
+instructions and this review packet
 are outside the bundle.
 
 ## 6. Is any wording abusive, or aimed at a private individual?
@@ -66,8 +68,11 @@ this packaging review and were not modified.
 
 ## 7. The agent files (agent_files) instruct this app's own assistant. Do they stay within this app's data and tools, without addressing other apps' assistants or the system agent, or asking for tools, hosts or approvals the manifest does not grant? Does each tool's risk match what it does: anything that sends, posts, shares, deletes or spends must be destructive; is anything marked shareable that returns the person's private data? For a tool with confirm "app", does the app visibly show its own confirmation, with the exact action, before it runs?
 
-The packet includes `tools.json`; the manifest has no agent block and the
-bundle has no AGENT.md or skills. `githubnotes.repositories`, `githubnotes.files`
+The manifest explicitly declares a foreground, read-only agent whose instructions
+are `AGENT.md`; it has no background triggers or skills. Its guidance limits reads
+to the requested repository/path, treats Markdown as untrusted, distinguishes
+remote content from an unsaved local draft and forbids invented writes/approval.
+`githubnotes.repositories`, `githubnotes.files`
 and `githubnotes.read` are host-service aliases with `risk: read`,
 `private_data: true`, `shareable: false`, and `background: false`. They match
 repository listing, file metadata listing and UTF-8 file reads under this app's
@@ -79,14 +84,12 @@ is not evidence of provider execution.
 
 ## 8. Route: pass, human-review, or reject. Give reasons a publisher can act on.
 
-human-review. The unsigned structural gate passed with only the expected
-publisher-signature warning. All eight scan questions are answered here, but
-no external reviewer verdict was generated. A maintainer must review this first
-submission, the required host changes and the preview limitations. Publisher
-signing, immutable release commit/tag and the public submission are separate
-steps; the publisher records the signed gate separately in `review/GATE.txt`
+human-review. The final signed structural gate passed against the existing catalog and recorded ymote key, with no publisher-signature warning. All eight scan questions are answered here, but
+no external reviewer verdict was generated. A maintainer must review this update, the required host changes and the preview limitations. Publisher
+signing is complete; the immutable release commit/tag and public submission remain separate
+steps. The publisher records the signed gate separately in `review/GATE.txt`
 and `review/GATE.json`, with its release metadata in `review/RELEASE.json`.
-This unsigned preparation result does not replace that release verification.
+The historical unsigned result in `VALIDATION-0.1.1.json` does not replace that signed verification.
 Live OAuth/read/write still need a registered device-flow client, user
 consent and an explicitly selected disposable repository/branch/path. Do not
 promote synthetic results to live acceptance or add untested platforms.

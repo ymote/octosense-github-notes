@@ -1,10 +1,1 @@
-{
-  "app_id": "org.octosense.samples.githubnotes",
-  "digest": "d5565438b78e01b98baf268661087b7efd0f5c01799f4841daa140955f82a13b",
-  "findings": [],
-  "passed": true,
-  "resources": [],
-  "schema": 1,
-  "stage": "structural",
-  "version": "0.1.0"
-}
+{"app_id":"org.octosense.samples.githubnotes","digest":"81dd860d3a1bea9dae5efa45e130f88c86edb99db9df84305622b972472db965","findings":[],"passed":true,"resources":[],"schema":1,"stage":"structural","version":"0.1.1"}
