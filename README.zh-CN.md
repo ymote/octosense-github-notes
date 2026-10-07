@@ -6,20 +6,20 @@
 并在保存到 GitHub 前审阅完整提交内容。不需要另建 OctoSense 云账户。
 发布者：**ymote**；应用 ID：`org.octosense.samples.githubnotes`；版本：`0.1.0`。
 
-**macOS 预览版。** 需要包含
-[OctoSense #347](https://github.com/OctoSense-org/OctoSense/pull/347) 和
-[App Hub #119](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/119)
-的兼容运行时，以及 `MarkdownEditor`、`auth`、`github` 宿主服务。
-通用 App Hub `card-host` 无法运行此编辑器。真实 GitHub 登录和仓库写入仍未验证；
-本仓库存在不代表应用已获公共 App Hub 收录。
+**macOS Apple Silicon 预览版。** 安装 [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2)，
+其中已包含连接服务和原生 Markdown 编辑器。本应用签名版本 `0.1.0` 已进入官方
+App Hub 目录，首次收录为[目录序号 7，App Hub #125](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/125)。
+通用 `card-host` 无法运行此编辑器。真实 GitHub 登录及仓库写入仍未验证。
 
 ## 使用
 
-1. 应用获收录后，通过兼容 OctoSense 的 App Hub 目录安装。提交内容仅为 `bundle/`。
+1. 在 OctoSense 中打开 **App Hub → Search**，搜索 **GitHub Notes**，审阅权限后依次
+   点击 **Get → Install → Open**。本仓库签名 `bundle/` 与目录中的应用包一致。
 2. 在 Source、Split、Preview 中编写和预览；窄窗口在 Source 和 Preview 之间切换。
    样式面板还提供富文本块编辑、撤销和重做。
 3. 左上返回/文件图标打开 **Repository & file**。通过宿主弹层及外部浏览器连接 GitHub。
-   宿主需要配置已启用 device flow 的 GitHub OAuth 客户端；凭据不能写入应用包。
+   宿主需要配置已启用 device flow 的 GitHub OAuth 客户端，参见[版本化配置指南](https://github.com/OctoSense-org/OctoSense/blob/desktop-v0.1.0-beta.2/crates/oauth-service/README.md)；
+   凭据不能写入应用包。
 4. 选择账户、仓库、分支和 Markdown 文件；**Use as new path** 指定新文件路径。
    公共仓库授权请求 `read:user` + `public_repo`；私有仓库请求范围更广的 `read:user` + `repo`。
 5. 填写提交信息，返回笔记，点击纸飞机图标。在宿主弹层中审阅准确的目标和 Markdown
@@ -91,7 +91,10 @@ Unicode 编辑、取消、模拟新建/更新提交、冲突、不确定响应�
 不能把历史记录称为新摘要的重新执行证据。
 
 编辑器文档上限为 512 KiB。不包含 Rinx 的 Matrix 发布、图片上传或远程图片加载。
-应用不提供聊天、模型代理或 Glance 发布。三个[只读工具别名](bundle/tools.json)
+应用不包含内部 Chat、直接模型调用或 Glance 发布。由于应用声明了工具，OctoSense
+还提供需要单独授权的可选 **Ask GitHub Notes** 代理。使用时，问题、对话上下文
+及获准读取的工具结果可能会发送给宿主配置的模型；参见[隐私说明](PRIVACY.zh-CN.md)。
+本次尚未验证这一 Shell 代理路径。三个[只读工具别名](bundle/tools.json)
 标记为私有数据、仅前台、不可共享；没有写入或审批工具。
 真实 GitHub、物理审批、代理工具转发及 Windows/Linux 界面仍未验证。
 独立 OnePlus 测试不等于本应用的 Android 发布验收；商店仅声明 **macos**。

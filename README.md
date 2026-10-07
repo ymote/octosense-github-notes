@@ -7,22 +7,23 @@ drafts, and review an exact GitHub commit before saving it. No separate OctoSens
 cloud account is needed. Publisher: **ymote**. App ID:
 `org.octosense.samples.githubnotes`, version `0.1.0`.
 
-**macOS preview.** Requires the connected-services runtime in
-[OctoSense #347](https://github.com/OctoSense-org/OctoSense/pull/347) and
-[App Hub #119](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/119), including
-`MarkdownEditor`, `auth` and `github` host services. Generic App Hub `card-host`
-cannot run this editor. Live GitHub authorization and repository writes remain
-unverified; no public catalog acceptance is implied by this repository.
+**macOS Apple Silicon preview.** Install [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2),
+which includes the connected services and native Markdown editor. This app's
+signed `0.1.0` bundle is available in the official App Hub catalog (first admission:
+[sequence 7, App Hub #125](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/125)). Generic `card-host` cannot run this editor.
+Live GitHub authorization and repository writes remain unverified.
 
 ## Use
 
-1. Install the reviewed bundle through a compatible OctoSense App Hub catalog
-   once admitted. This repository's `bundle/` is the submission artifact.
+1. In OctoSense, open **App Hub → Search**, search **GitHub Notes**, then choose
+   **Get → Install → Open** after reviewing the requested permissions.
+   This repository's signed `bundle/` is the same application artifact.
 2. Write locally using Source, Split or Preview; narrow windows alternate Source
    and Preview. The palette also offers the rich block editor and undo/redo.
 3. The back/file icon opens **Repository & file**. Connect GitHub through the host
    sheet and external browser. A host-configured GitHub OAuth client with device
-   flow enabled is required. Never put provider credentials in the bundle.
+   flow enabled is required; follow the [versioned host setup guide](https://github.com/OctoSense-org/OctoSense/blob/desktop-v0.1.0-beta.2/crates/oauth-service/README.md).
+   Never put provider credentials in the bundle.
 4. Choose the account, repository, branch and Markdown file. **Use as new path**
    selects a new destination. Public access requests `read:user` + `public_repo`;
    private access requests the broader `read:user` + `repo` scopes.
@@ -104,8 +105,12 @@ hashes; this repository changes listing metadata and consequently the digest.
 They are not new execution evidence for that new digest.
 
 The editor has a 512 KiB document limit. Rinx Matrix publication, image upload and
-remote image fetching are not included. This app has no chat/model agent or
-Glance publication. Its three private-data read aliases in [tools.json](bundle/tools.json)
+remote image fetching are not included. This app has no in-app Chat, direct model
+calls or Glance publication. OctoSense offers an optional, separately consented
+**Ask GitHub Notes** agent because the bundle declares tools. If used, your
+questions, conversation context and permitted tool results may be sent to the
+host-configured model; see [Privacy](PRIVACY.md). This shell-agent path remains
+unverified here. Its three private-data read aliases in [tools.json](bundle/tools.json)
 are foreground-only and non-shareable; there is no exported write/approval tool.
 Live GitHub, physical host approval, brokered tool execution and Windows/Linux UI
 remain unverified. A separate OnePlus test does not establish an Android release
