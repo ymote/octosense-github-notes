@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "result": "pass",
+  "checked_at_utc": "2026-10-07T07:19:32.352387+00:00",
+  "default_public_base": "https://raw.githubusercontent.com/OctoSense-org/OctoSense-App-Hub/main/",
+  "sequence": 10,
+  "default_anchor_signature_verified": true,
+  "existing_keys_and_previous_entries_unchanged": true,
+  "catalog_bytes_equal_verified_candidate": true,
+  "not_verified": [
+    "new native UI or model execution",
+    "live provider reads/writes",
+    "physical approval",
+    "Android"
+  ],
+  "app": {
+    "app_id": "org.octosense.samples.githubnotes",
+    "latest_version": "0.1.1",
+    "bundle_digest": "81dd860d3a1bea9dae5efa45e130f88c86edb99db9df84305622b972472db965",
+    "source": {
+      "repository": "https://github.com/ymote/octosense-github-notes",
+      "commit_url": "https://github.com/ymote/octosense-github-notes/commit/77a1a98b53d5665385ead239d9d8ad0dfee7ebc0"
+    },
+    "signed_pack_matches_admitted_artifact": true,
+    "index_matches_catalog": true,
+    "manifest_icon_and_all_screenshots_match": true
+  },
+  "requests": [
+    {
+      "path": "catalog.json",
+      "status": 200,
+      "sha256": "18276886c528dfe7e55b231c1b70771a92aea9ac074c5991fff9fa4abc0a30bf",
+      "bytes": 59790
+    },
+    {
+      "path": "artifacts/org.octosense.samples.githubnotes-0.1.1.bundle.pack.json",
+      "status": 200,
+      "sha256": "7a32c4585fd60744a5d111a4df568eaa184327b6d3d0fc2e570463af07e36122",
+      "bytes": 204662
+    },
+    {
+      "path": "index/org.octosense.samples.githubnotes-0.1.1.json",
+      "status": 200,
+      "sha256": "fb4404cbea92c61a99f8cd41385883f10af36b1abb6ba02caa55c18fad9a8a9f",
+      "bytes": 6179
+    },
+    {
+      "path": "artifacts/org.octosense.samples.githubnotes-0.1.1.bundle/manifest.json",
+      "status": 200,
+      "sha256": "49dc25e5d645a129785ff8d885cd75f1f7d606f5b5e76204748aa245309f779d",
+      "bytes": 934
+    },
+    {
+      "path": "artifacts/org.octosense.samples.githubnotes-0.1.1.bundle/assets/icon.svg",
+      "status": 200,
+      "sha256": "34a8355dc59fc01adb812b4399fff142638a2390a4d66f6cf54bcf630a1c615c",
+      "bytes": 339
+    },
+    {
+      "path": "artifacts/org.octosense.samples.githubnotes-0.1.1.bundle/screenshots/01-preview.png",
+      "status": 200,
+      "sha256": "1fa65e33adec702180f545d047d9223bf1a513a18cdfd35e8174f50ac3658de9",
+      "bytes": 58387
+    },
+    {
+      "path": "artifacts/org.octosense.samples.githubnotes-0.1.1.bundle/screenshots/02-editor.png",
+      "status": 200,
+      "sha256": "f95def5775a34e7bb14b12b6739b267b35009bd7f297cd3328428fe5f11ff5bc",
+      "bytes": 70548
+    }
+  ],
+  "immutable_release_tag": "v0.1.1",
+  "tagged_bundle_and_release_assets_unchanged": true,
+  "official_merge_commit_url": "https://github.com/OctoSense-org/OctoSense-App-Hub/commit/b8750d92c41365c4ff80f9baef077275a15b020b"
+}

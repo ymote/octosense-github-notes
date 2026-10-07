@@ -8,17 +8,16 @@ cloud account is needed. Publisher: **ymote**. App ID:
 `org.octosense.samples.githubnotes`, version `0.1.1` (publisher-signed preview).
 
 **macOS Apple Silicon preview.** Install [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2),
-which includes the connected services and native Markdown editor. The previous
-signed `0.1.0` bundle is available in the official App Hub catalog (first admission:
-[sequence 7, App Hub #125](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/125)). Generic `card-host` cannot run this editor.
+which includes the connected services and native Markdown editor. The signed
+`0.1.1` bundle is available in the official App Hub catalog
+([sequence 10, App Hub #133](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/133)). Generic `card-host` cannot run this editor.
 Live GitHub authorization and repository writes remain unverified.
 
 ## Use
 
 1. In OctoSense, open **App Hub → Search**, search **GitHub Notes**, then choose
    **Get → Install → Open** after reviewing the requested permissions.
-   The publisher-signed `0.1.1` update still needs catalog admission;
-   the previous `v0.1.0` tag remains immutable.
+   The `v0.1.1` release tag and previous `v0.1.0` tag remain immutable.
 2. Write locally using Source, Split or Preview; narrow windows alternate Source
    and Preview. The palette also offers the rich block editor and undo/redo.
 3. The back/file icon opens **Repository & file**. Connect GitHub through the host
@@ -132,3 +131,8 @@ The guidance distinguishes remote saved Markdown from an unsaved editor draft
 and treats repository content as untrusted data. Editor and screenshot bytes
 are unchanged. Run `python3 -m unittest discover -s tests -v` for declaration
 and provenance checks. Model/broker execution still needs separate acceptance.
+
+The [post-admission catalog receipt](review/CATALOG-0.1.1.json) verifies the default
+public catalog, signed pack and listing assets. This adds publication evidence,
+not new native, model or live-provider acceptance. The tagged release record
+remains the historical record from signing time.

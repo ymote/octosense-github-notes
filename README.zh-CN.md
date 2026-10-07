@@ -7,14 +7,14 @@
 发布者：**ymote**；应用 ID：`org.octosense.samples.githubnotes`；版本：`0.1.1`（发布者已签名预览）。
 
 **macOS Apple Silicon 预览版。** 安装 [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2)，
-其中已包含连接服务和原生 Markdown 编辑器。之前的签名版本 `0.1.0` 已进入官方
-App Hub 目录，首次收录为[目录序号 7，App Hub #125](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/125)。
+其中已包含连接服务和原生 Markdown 编辑器。签名版本 `0.1.1` 已进入官方
+App Hub 目录（[目录序号 10，App Hub #133](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/133)）。
 通用 `card-host` 无法运行此编辑器。真实 GitHub 登录及仓库写入仍未验证。
 
 ## 使用
 
 1. 在 OctoSense 中打开 **App Hub → Search**，搜索 **GitHub Notes**，审阅权限后依次
-   点击 **Get → Install → Open**。当前 `0.1.1` 已由发布者签名，仍需目录准入；之前的 `v0.1.0` 标签保持不变。
+   点击 **Get → Install → Open**。`v0.1.1` 及之前的 `v0.1.0` 标签保持不变。
 2. 在 Source、Split、Preview 中编写和预览；窄窗口在 Source 和 Preview 之间切换。
    样式面板还提供富文本块编辑、撤销和重做。
 3. 左上返回/文件图标打开 **Repository & file**。通过宿主弹层及外部浏览器连接 GitHub。
@@ -109,3 +109,6 @@ Unicode 编辑、取消、模拟新建/更新提交、冲突、不确定响应�
 运行 `python3 -m unittest discover -s tests -v` 检查声明与来源；模型／代理工具执行仍需独立验收。
 
 旧 `0.1.0` 签名记录保存在 `review/releases/0.1.0/`，不能验证当前 `0.1.1` 候选。指定发布者签名后才会补充新记录；未签名的 gate 通过不等于正式准入。
+
+[收录后目录记录](review/CATALOG-0.1.1.json) 验证默认公开目录、签名包与列表资源。
+它只增加发布证据，不增加原生、模型或真实服务验收声明。标签中的发布记录仍保留签名时的历史状态。
