@@ -9,8 +9,8 @@ Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.1`
 This is a **macOS development preview candidate**. It requires a compatible
 OctoSense host with contract 1.8.0 / `publisher-github-v1` support and the native
 Markdown editor. `desktop-v0.1.0-beta.2` cannot install this keyless release;
-generic `card-host` cannot render its editor. Version 0.2.0 passed real signed installation, editing and restart in the
-compatible packaged host at `5e1a8414`; the official compatible release remains pending. Live GitHub authorization and remote commits are unverified.
+generic `card-host` cannot render its editor. Versions 0.2.0 → 0.2.1 passed real signed installation, update, editing and restart
+in the compatible packaged host at `5e1a8414`; the official compatible release remains pending. Live GitHub authorization and remote commits are unverified.
 
 ## Install and use
 
@@ -71,7 +71,7 @@ administrator catalog approval are separate from GitHub artifact publication.
 
 The editor, three private read aliases and account/review logic are retained
 from the earlier app. New source/native evidence is recorded under
-[review/0.2.0](review/0.2.0/README.md). Original screenshots contain only fictional
+[review/0.2.0](review/0.2.0/README.md) and the [verified 0.2.1 update](review/0.2.1/README.md). Original screenshots contain only fictional
 notes. Preliminary editor checks do not prove current-shell signed installation,
 live OAuth, remote writes, physical approval or model execution.
 

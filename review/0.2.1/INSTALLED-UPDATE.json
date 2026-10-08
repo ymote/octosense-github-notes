@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "phase": "update",
+  "app_id": "io.github.ymote.githubnotes",
+  "source": "5e1a8414cba4c9c3ab041b5555b6d90bcbad03bb",
+  "binary_sha256": "e758a27c2d07ea7e8651e953b5ec267fcb19918a9b4dc04166cc77c0de530539",
+  "catalog_authority": "temporary-local-legacy-not-production-v2",
+  "publisher_proof": "genuine-github-tag-push",
+  "personal_accounts_used": false,
+  "provider_calls": false,
+  "checks": [
+    "exact Unicode draft retained across verified app update",
+    "native rendered Preview opens",
+    "account-free repository operation gives clear action",
+    "save without connected destination refused",
+    "installed manifest retains genuine release proof",
+    "Library Open after process restart retains exact draft"
+  ],
+  "status": "passed",
+  "visual_review": "Original updated Source/Preview/restarted editor captures inspected; readable Unicode content and reachable Mac controls. Other platforms unverified.",
+  "version": "0.2.1",
+  "publisher_commit": "0356c16449673fc12cef501d22be446bb496fd76",
+  "owned_process_stopped": true,
+  "installed_manifest_exact_release_bytes": true,
+  "pack_sha256": "4c8087759c93c947e6f1d2f543dea7f62daa71b8306e73c61e76a19924375b31",
+  "workflow": "https://github.com/ymote/octosense-github-notes/actions/runs/37749902891",
+  "ephemeral_hub_keys_deleted": true,
+  "previous_attempt": "A first attempt asserted before expected editor text appeared; later failure snapshot and persisted files contained the exact draft. The original failed capture/log is retained privately. A fresh initial-install and update run passed with an 8-second bounded text-readiness check; no app/host/data mutation or ambiguous write replay.",
+  "screenshots_sha256": {
+    "updated-preview.png": "b2e99cd34298fdc5182654176cc869b0b69e09979b0a203017e11c8cbfe4a7da",
+    "updated-restart.png": "108db71918cefe39ab8ed9e9003e91b2b6935ccc58a69374f800f8224c7c533a"
+  }
+}
