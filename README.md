@@ -4,13 +4,13 @@
 
 Write Markdown with the native Rinx article editor in OctoSense, retain local
 drafts across restart, and review an exact GitHub commit before saving.
-Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.0`.
+Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.1`.
 
 This is a **macOS development preview candidate**. It requires a compatible
 OctoSense host with contract 1.8.0 / `publisher-github-v1` support and the native
 Markdown editor. `desktop-v0.1.0-beta.2` cannot install this keyless release;
-generic `card-host` cannot render its editor. A compatible packaged host is
-under acceptance. Live GitHub authorization and remote commits are unverified.
+generic `card-host` cannot render its editor. Version 0.2.0 passed real signed installation, editing and restart in the
+compatible packaged host at `5e1a8414`; the official compatible release remains pending. Live GitHub authorization and remote commits are unverified.
 
 ## Install and use
 
@@ -63,7 +63,7 @@ hub scan bundle --packet build/review-packet.json
 python3 -m unittest discover -s tests -v
 ```
 
-Attach the successful workflow, release, screenshots and
+Open or update the [submission issue](https://github.com/OctoSense-org/OctoSense-App-Hub/issues/158) with the successful workflow, release, screenshots and
 [review answers](review/0.2.0/ANSWERS.md) to the submission issue. Hub review and
 administrator catalog approval are separate from GitHub artifact publication.
 

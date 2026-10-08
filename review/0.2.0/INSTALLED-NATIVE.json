@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "phase": "initial",
+  "app_id": "io.github.ymote.githubnotes",
+  "source": "5e1a8414cba4c9c3ab041b5555b6d90bcbad03bb",
+  "binary_sha256": "e758a27c2d07ea7e8651e953b5ec267fcb19918a9b4dc04166cc77c0de530539",
+  "catalog_authority": "temporary-local-legacy-not-production-v2",
+  "publisher_proof": "genuine-github-tag-push",
+  "personal_accounts_used": false,
+  "provider_calls": false,
+  "checks": [
+    "native Unicode Markdown edit persists in app storage",
+    "native rendered Preview opens",
+    "account-free repository operation gives clear action",
+    "save without connected destination refused",
+    "installed manifest retains genuine release proof",
+    "Library Open after process restart retains exact draft"
+  ],
+  "status": "passed",
+  "visual_review": "Original editor, Preview and restart captures inspected: content readable and controls reachable in the Mac shell; other platforms unverified",
+  "version": "0.2.0",
+  "publisher_commit": "920ce1ae521c3831e331d0cfb4417aa44ec99f05",
+  "owned_process_stopped": true,
+  "installed_manifest_exact_release_bytes": true,
+  "pack_sha256": "23999e614641153fa87ae3d6b4cbb055ec4b2912ab4acec191f6b5d13ac2854d",
+  "workflow": "https://github.com/ymote/octosense-github-notes/actions/runs/37748607959",
+  "screenshots_sha256": {
+    "installed-preview.png": "6f53eab0c2d9bcb54816143ace864877c467ef799cdea8c812ddb409902555f7",
+    "installed-restart.png": "48a23e088d7e16fe648a35bd9fac9deb96112cffd139347b3697a084e1a40e7e"
+  }
+}

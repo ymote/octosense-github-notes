@@ -1,0 +1,3 @@
+io.github.ymote.githubnotes 0.2.1 — PASSED
+  [warning] publisher-signature: unsigned: accountability rests on the hub alone
+  grants: capabilities {"auth", "github", "storage"}, hosts {}, storage 4194304 bytes, agent read-only
