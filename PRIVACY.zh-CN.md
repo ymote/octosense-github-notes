@@ -1,6 +1,6 @@
 # GitHub Notes 隐私说明
 
-[English](PRIVACY.md) · 适用于 0.2.0 · 2026-10-08
+[English](PRIVACY.md) · 适用于 0.2.x · 2026-10-08
 
 发布者：**ymote**。本文说明本仓库代码及所需 OctoSense 宿主服务的行为；
 真实 GitHub 登录和写入仍待验收。应用没有发布者运营的后端或统计端点，

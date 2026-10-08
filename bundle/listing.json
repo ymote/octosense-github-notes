@@ -22,7 +22,7 @@
     "support": "https://github.com/ymote/octosense-github-notes/issues",
     "privacy_policy_url": "https://github.com/ymote/octosense-github-notes/blob/main/PRIVACY.md"
   },
-  "release_notes": "0.2.0: fresh GitHub-backed app identity io.github.ymote.githubnotes with tag-issued release attestation. No developer signing key. Historical org.octosense.samples.githubnotes releases remain separate and unchanged; there is no automatic data/account migration. Local editing and reviewed GitHub save behavior are retained.",
+  "release_notes": "0.2.1: clarify that the GitHub release workflow does not grant App Hub admission and supports an issue opened before the release. Regenerate from Design Flow a9a07f4. Editor, permissions and draft format remain unchanged. Verified 0.2.0 installed editing/restart evidence is recorded separately; this update uses a fresh immutable attestation.",
   "age_rating": "all",
   "license": "Apache-2.0"
 }
