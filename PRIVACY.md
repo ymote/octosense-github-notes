@@ -1,6 +1,6 @@
 # GitHub Notes privacy
 
-[简体中文](PRIVACY.zh-CN.md) · Applies to version 0.1.1 · 2026-10-07
+[简体中文](PRIVACY.zh-CN.md) · Applies to version 0.2.0 · 2026-10-08
 
 Publisher: **ymote**. This describes the code in this repository and its required
 OctoSense host services; live GitHub authorization/write acceptance is still

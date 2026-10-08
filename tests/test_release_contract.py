@@ -10,7 +10,10 @@ def read(name): return json.loads((BUNDLE / name).read_text())
 class ReleaseContract(unittest.TestCase):
     def test_optional_agent_is_explicit_foreground_and_read_only(self):
         manifest = read('manifest.json')
-        self.assertEqual(manifest['version'], '0.1.1')
+        self.assertTrue(manifest['version'].startswith('0.2.'))
+        self.assertEqual(manifest['id'], 'io.github.ymote.githubnotes')
+        self.assertIsNone(manifest['integrity'].get('signature'))
+        self.assertNotIn('github', manifest['integrity'])
         agent = manifest['agent']
         self.assertEqual(agent['profile'], 'read-only')
         self.assertEqual(agent['tools'], [])
@@ -33,9 +36,9 @@ class ReleaseContract(unittest.TestCase):
         self.assertEqual(set(read('manifest.json')['capabilities']), {'storage', 'auth', 'github'})
         self.assertEqual(read('manifest.json')['network']['hosts'], [])
 
-    def test_editor_tools_and_original_pixels_are_unchanged(self):
+    def test_editor_and_read_tools_are_unchanged(self):
         prior = json.loads((ROOT / 'review/releases/0.1.0/RELEASE.json').read_text())['release_files_sha256']
-        for name in ('main.splash', 'tools.json', 'screenshots/01-preview.png', 'screenshots/02-editor.png'):
+        for name in ('main.splash', 'tools.json'):
             self.assertEqual(hashlib.sha256((BUNDLE / name).read_bytes()).hexdigest(), prior[name], name)
 
 if __name__ == '__main__': unittest.main()

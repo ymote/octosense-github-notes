@@ -2,137 +2,93 @@
 
 [简体中文](README.zh-CN.md)
 
-Write Markdown in OctoSense with the Rinx article writer, keep recoverable local
-drafts, and review an exact GitHub commit before saving it. No separate OctoSense
-cloud account is needed. Publisher: **ymote**. App ID:
-`org.octosense.samples.githubnotes`, version `0.1.1` (publisher-signed preview).
+Write Markdown with the native Rinx article editor in OctoSense, retain local
+drafts across restart, and review an exact GitHub commit before saving.
+Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.0`.
 
-**macOS Apple Silicon preview.** Install [OctoSense desktop-v0.1.0-beta.2](https://github.com/OctoSense-org/OctoSense/releases/tag/desktop-v0.1.0-beta.2),
-which includes the connected services and native Markdown editor. The signed
-`0.1.1` bundle is available in the official App Hub catalog
-([sequence 10, App Hub #133](https://github.com/OctoSense-org/OctoSense-App-Hub/pull/133)). Generic `card-host` cannot run this editor.
-Live GitHub authorization and repository writes remain unverified.
+This is a **macOS development preview candidate**. It requires a compatible
+OctoSense host with contract 1.8.0 / `publisher-github-v1` support and the native
+Markdown editor. `desktop-v0.1.0-beta.2` cannot install this keyless release;
+generic `card-host` cannot render its editor. A compatible packaged host is
+under acceptance. Live GitHub authorization and remote commits are unverified.
 
-## Use
+## Install and use
 
-1. In OctoSense, open **App Hub → Search**, search **GitHub Notes**, then choose
-   **Get → Install → Open** after reviewing the requested permissions.
-   The `v0.1.1` release tag and previous `v0.1.0` tag remain immutable.
-2. Write locally using Source, Split or Preview; narrow windows alternate Source
-   and Preview. The palette also offers the rich block editor and undo/redo.
-3. The back/file icon opens **Repository & file**. Connect GitHub through the host
-   sheet and external browser. A host-configured GitHub OAuth client with device
-   flow enabled is required; follow the [versioned host setup guide](https://github.com/OctoSense-org/OctoSense/blob/desktop-v0.1.0-beta.2/crates/oauth-service/README.md).
-   Never put provider credentials in the bundle.
-4. Choose the account, repository, branch and Markdown file. **Use as new path**
-   selects a new destination. Public access requests `read:user` + `public_repo`;
-   private access requests the broader `read:user` + `repo` scopes.
-5. Set the commit message, return to the note, and use the paper-plane icon.
-   Review the exact destination and Markdown in the host sheet before approving.
-   A commit is reported only after GitHub returns a commit SHA.
+Publication is requested through an issue on
+[OctoSense App Hub](https://github.com/OctoSense-org/OctoSense-App-Hub/issues).
+A GitHub tag produces verifiable release assets; it does **not** automatically
+submit or admit the app. Until administrators publish this new ID in the
+catalog, it is not available through the official App Hub search.
 
-Cancelled or failed saves retain the draft. Switching accounts does not silently
-retarget an open note. Replacing a note keeps one previous recovery copy. If a
-save has an uncertain network outcome, check GitHub before trying again; the app
-does not automatically retry. Disconnecting retains local drafts and existing
-GitHub commits. See [Privacy](PRIVACY.md).
+After admission, use **App Hub → Search → GitHub Notes → Get → Install → Open**
+in a compatible host. Review the app ID and permissions before installing.
 
-## Verify a release
+1. Write locally in Source, Split or Preview. Narrow windows switch Source and
+   Preview; the palette offers the rich block editor and undo/redo.
+2. The file icon opens **Repository & file**. Connect GitHub through the host
+   sheet and external browser. The host operator must configure a GitHub OAuth
+   client with device flow enabled; no token or secret belongs in this bundle.
+3. Select an account, repository, branch and Markdown file. **Use as new path**
+   chooses a new destination. Public access requests `read:user` + `public_repo`;
+   private access requests broader `read:user` + `repo` scopes.
+4. Set a commit message and use the paper-plane icon. Review the exact target
+   and Markdown in the host sheet. Only a returned commit SHA counts as saved.
 
-A publisher-signed release includes `publisher.json` and the signed check output
-under `review/`, with versioned release and question records. Prior `0.1.0`
-records are preserved in `review/releases/0.1.0/`; they do not verify this
-signed `0.1.1` update. Its new records are [review/GATE.txt](review/GATE.txt),
-[review/RELEASE.json](review/RELEASE.json) and [review/QUESTIONS.json](review/QUESTIONS.json). Read the public key from
-`publisher.json`, then verify the unchanged bundle:
+Cancelled or failed saves retain the draft. Account switches never silently
+retarget a note. Replacing a note keeps one recovery copy. An uncertain network
+response needs checking on GitHub before another approved attempt.
 
-```sh
-HUB=hub # or the path to a compatible hub binary
-APP_PUBLISHER_PUBLIC_KEY="$(python3 -c 'import json; print(json.load(open("publisher.json"))["public_key"])')"
-"$HUB" check bundle --publisher-key "ymote=$APP_PUBLISHER_PUBLIC_KEY"
-```
+## GitHub-managed publishing
 
-The command reads only the public key and does not modify the bundle. A publisher signature identifies its source; App Hub catalog
-admission remains a separate maintainer decision.
+No separate developer signing key or repository signing secret is required.
+The reviewed [tag workflow](.github/workflows/publish-app.yml) prepares the
+canonical manifest, obtains a GitHub Actions attestation, verifies it, and
+publishes `app.bundle.pack.json`, `octosense-app-manifest.json` and
+`release-receipt.json`. Each update needs a new version and immutable tag.
 
-## Test without a GitHub account
-
-With this repository and a compatible OctoSense checkout as siblings, run from
-the **OctoSense** directory on macOS:
+Verify downloaded assets with a compatible Hub CLI:
 
 ```sh
-cargo build --locked --release -p octosense-shell \
-  --features mobile-apps,acceptance-fixtures \
-  --example connected-app-host --example connected-install
-python3 tools/connected-e2e/notes.py --bundle ../octosense-github-notes/bundle
+hub publisher-unpack app.bundle.pack.json --out verified-bundle
+hub publisher-verify verified-bundle
 ```
 
-The test signs a temporary copy, installs through the real Store, and exercises
-the native editor, account gates and exact host review using a synthetic GitHub
-transport and in-memory vault. It does not use your GitHub CLI login or write a
-real repository. The fixture feature is disabled in ordinary builds and refuses
-unmarked profiles. See the [pinned acceptance guide](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/tools/connected-e2e/README.md)
-for manual fixture launch and evidence handling. These commands are reproduction
-instructions; the repackaged listing has not been rerun through the native suite.
-
-## Develop a new version
-
-Use an unsigned development copy, not the published signed artifact. Build `hub`
-from the App Hub revision required by the runtime, then check that copy:
+Never stamp the verified bundle. For editable source only:
 
 ```sh
 hub stamp bundle
 hub check bundle --allow-unsigned
 mkdir -p build
 hub scan bundle --packet build/review-packet.json
+python3 -m unittest discover -s tests -v
 ```
 
-Stamping a signed artifact invalidates its signature. After changing a release,
-the publisher must use a new version, stamp, re-sign with `hub sign-manifest`,
-and run the publisher-key check above. `--allow-unsigned` does not trust an
-unknown signature. Keys and review packets stay out of `bundle/`. [Review answers](review/ANSWERS.md) and [source provenance](review/PROVENANCE.json)
-are separate from the app.
+Attach the successful workflow, release, screenshots and
+[review answers](review/0.2.0/ANSWERS.md) to the submission issue. Hub review and
+administrator catalog approval are separate from GitHub artifact publication.
 
 ## Evidence and limits
 
-The two listing images are unchanged original native captures with fictional
-notes; they are not mockups. Historical [installed acceptance](https://github.com/OctoSense-org/OctoScript-App-Design-Flow/blob/5b0fde7ed0e9e4131751d16f55ba3d8a3180dd95/examples/connected-apps/github-notes/evidence/rinx-writer-installed/receipt.json)
-and [visual review](https://github.com/OctoSense-org/OctoScript-App-Design-Flow/blob/5b0fde7ed0e9e4131751d16f55ba3d8a3180dd95/examples/connected-apps/github-notes/evidence/rinx-writer-installed/manual-review.json)
-cover repository/file selection, Unicode editing, cancellation, synthetic
-existing/new commits, conflicts, uncertain responses and offline restart.
-The [writer soak](https://github.com/OctoSense-org/OctoSense/blob/26b9fe9fa51ef3c1fe6f833743144a2e12cf54e3/tools/connected-e2e/evidence/notes-rinx-soak-20261006/README.md)
-records 36 cycles over ten minutes before the failed-load recovery guard and a
-12-cycle regression afterward. These records retain their original source
-hashes; 0.1.1 changes agent declarations, guidance and release metadata, so its
-bundle digest differs.
-They are not new execution evidence for that new digest.
+The editor, three private read aliases and account/review logic are retained
+from the earlier app. New source/native evidence is recorded under
+[review/0.2.0](review/0.2.0/README.md). Original screenshots contain only fictional
+notes. Preliminary editor checks do not prove current-shell signed installation,
+live OAuth, remote writes, physical approval or model execution.
 
-The editor has a 512 KiB document limit. Rinx Matrix publication, image upload and
-remote image fetching are not included. This app has no in-app Chat, direct model
-calls or Glance publication. OctoSense offers an optional, separately consented
-**Ask GitHub Notes** agent explicitly declared in the manifest and [AGENT.md](bundle/AGENT.md). If used, your
-questions, conversation context and permitted tool results may be sent to the
-host-configured model; see [Privacy](PRIVACY.md). This shell-agent path remains
-unverified here. Its three private-data read aliases in [tools.json](bundle/tools.json)
-are foreground-only and non-shareable; there is no exported write/approval tool.
-Live GitHub, physical host approval, brokered tool execution and Windows/Linux UI
-remain unverified. A separate OnePlus test does not establish an Android release
-claim for this bundle; the listing declares **macos only**.
+The optional **Ask GitHub Notes** agent needs separate consent and may send
+questions, conversation context and permitted repository reads to the
+host-configured model. It is foreground-only, read-only and non-shareable.
+It cannot edit the draft, approve or commit. There is no in-app chat, direct
+model call, Glance publication, Matrix publication or image upload. Documents
+are limited to 512 KiB. Only macOS is listed; other platforms remain unverified.
+See [Privacy](PRIVACY.md), [Support](SUPPORT.md) and [Attribution](NOTICE).
 
-[Support](SUPPORT.md) · [Privacy](PRIVACY.md) · [Attribution](NOTICE) ·
-[Apache-2.0](LICENSE)
+## Historical app
 
-## 0.1.1 agent declaration
-
-The optional assistant is now explicitly foreground-only and read-only in the
-manifest, with declared instructions. It keeps the same three private read
-tools; it cannot edit the local draft, commit, approve or run in the background.
-The guidance distinguishes remote saved Markdown from an unsaved editor draft
-and treats repository content as untrusted data. Editor and screenshot bytes
-are unchanged. Run `python3 -m unittest discover -s tests -v` for declaration
-and provenance checks. Model/broker execution still needs separate acceptance.
-
-The [post-admission catalog receipt](review/CATALOG-0.1.1.json) verifies the default
-public catalog, signed pack and listing assets. This adds publication evidence,
-not new native, model or live-provider acceptance. The tagged release record
-remains the historical record from signing time.
+The old `org.octosense.samples.githubnotes` 0.1.0/0.1.1 releases, signatures,
+`publisher.json` and dated `review/` records remain historical and unchanged.
+They are not the identity or verification evidence for this fresh app. There
+is no automatic transfer of drafts, account handles or publisher ownership.
+Old App Hub [#121](https://github.com/OctoSense-org/OctoSense-App-Hub/issues/121)
+and [#131](https://github.com/OctoSense-org/OctoSense-App-Hub/issues/131) describe
+those old releases, not this submission.

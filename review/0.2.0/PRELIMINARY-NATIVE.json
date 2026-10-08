@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "scope": "preliminary native editor only; unsigned source; no provider; not final compatible shell acceptance",
+  "binary_sha256": "5ff4d7bafbef6ec2fce82ec286a94774c0c055ba7256877848f2aac453688aad",
+  "binary_source_attribution": "existing connected-app-host; exact build commit unverified",
+  "checks": [
+    "Unicode Markdown edited and locally saved",
+    "Rendered preview visible",
+    "Missing account gives actionable message",
+    "Save without destination remains blocked",
+    "Exact draft retained on process restart"
+  ],
+  "live_github": false,
+  "agent_execution": false,
+  "status": "passed",
+  "app_id": "io.github.ymote.githubnotes",
+  "version": "0.2.0",
+  "main_splash_sha256": "733f68da86ba76b51766386e99d51d2e12b67feb9496fc32d6d8c8ba6acf85c6",
+  "screenshots_sha256": {
+    "screenshots/01-preview.png": "1dc4bfe3745572fcb49d0b1269c3126100412885f709080a510c8d0d29a65187",
+    "screenshots/02-editor.png": "b95844f06658254a44d11fabebbe231dc4f71b548c64ad0859a66dade6a57821"
+  },
+  "visual_review": "Original editor/preview/no-account captures inspected; content readable and controls usable in wide Mac window; no mobile claim"
+}
