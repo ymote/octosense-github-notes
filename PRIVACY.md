@@ -38,8 +38,9 @@ SHA where applicable. Your GitHub account's commit identity is used by GitHub.
 Public repository content and commit history can be publicly visible; private
 repository visibility follows GitHub permissions.
 
-**Connect public repositories** requests `read:user` and `public_repo`.
-**Connect private repositories** instead requests `read:user` and `repo`.
+**Connect GitHub** with **Public repositories** chosen requests `read:user` and
+`public_repo`. With **Public and private repositories** chosen, or through
+**Include private repositories**, it instead requests `read:user` and `repo`.
 These OAuth scopes grant broader provider access than a single selected note;
 the host sheet explains them before consent. Every app-initiated write goes
 through the host's exact review sheet. Selecting an account or typing a draft
@@ -78,7 +79,7 @@ their own data practices; this document covers this app and the named connector.
 
 ## Disconnect, deletion and support
 
-**Disconnect selected account** revokes this app's local handle and asks the host
+**Disconnect**, once confirmed, revokes this app's local handle and asks the host
 to delete its stored credential. It does not revoke the OAuth application's grant
 on GitHub, erase local drafts, or delete repository files or commit history. For
 provider-side revocation, use GitHub's authorized OAuth applications settings.

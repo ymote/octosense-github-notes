@@ -4,7 +4,8 @@
 
 Write Markdown with the native Rinx article editor in OctoSense, retain local
 drafts across restart, and review an exact GitHub commit before saving.
-Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.1`.
+Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.2`
+(source; its tagged release is pending, and `0.2.1` is the latest release).
 
 This is a **macOS development preview candidate**. It requires a compatible
 OctoSense host with contract 1.8.0 / `publisher-github-v1` support and the native
@@ -25,12 +26,17 @@ in a compatible host. Review the app ID and permissions before installing.
 
 1. Write locally in Source, Split or Preview. Narrow windows switch Source and
    Preview; the palette offers the rich block editor and undo/redo.
-2. The file icon opens **Repository & file**. Connect GitHub through the host
-   sheet and external browser. The host operator must configure a GitHub OAuth
+2. The file icon opens **Repository & file**. Choose what GitHub Notes can
+   reach, **Public repositories** or **Public and private repositories**, then
+   **Connect GitHub**. The host sheet shows a one-time code to enter on
+   github.com/login/device. The host operator must configure a GitHub OAuth
    client with device flow enabled; no token or secret belongs in this bundle.
-3. Select an account, repository, branch and Markdown file. **Use as new path**
-   chooses a new destination. Public access requests `read:user` + `public_repo`;
-   private access requests broader `read:user` + `repo` scopes.
+3. After you approve, the account card shows who is connected and with what
+   access, and your repositories load. Choose a repository, branch and Markdown
+   file; **Use as new path** chooses a new destination. Public access requests
+   `read:user` + `public_repo`; public and private access requests broader
+   `read:user` + `repo` scopes. **Use another account** switches or adds an
+   account, and **Disconnect** asks before it disconnects.
 4. Set a commit message and use the paper-plane icon. Review the exact target
    and Markdown in the host sheet. Only a returned commit SHA counts as saved.
 
@@ -71,7 +77,8 @@ administrator catalog approval are separate from GitHub artifact publication.
 
 The editor, three private read aliases and account/review logic are retained
 from the earlier app. New source/native evidence is recorded under
-[review/0.2.0](review/0.2.0/README.md) and the [verified 0.2.1 update](review/0.2.1/README.md). Original screenshots contain only fictional
+[review/0.2.0](review/0.2.0/README.md), the [verified 0.2.1 update](review/0.2.1/README.md)
+and the [0.2.2 account screen](review/0.2.2/README.md). Original screenshots contain only fictional
 notes. Preliminary editor checks do not prove current-shell signed installation,
 live OAuth, remote writes, physical approval or model execution.
 

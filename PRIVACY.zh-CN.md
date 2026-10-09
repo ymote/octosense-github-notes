@@ -29,8 +29,8 @@ Keychain），脚本只获得句柄，不获得令牌。这是代码权限边界
 提交身份由 GitHub 根据账户处理。公共仓库内容及历史可能公开；私有仓库可见性遵循
 GitHub 权限。
 
-**Connect public repositories** 请求 `read:user` 和 `public_repo`；
-**Connect private repositories** 则请求 `read:user` 和 `repo`。
+选择 **Public repositories** 后点 **Connect GitHub**，请求 `read:user` 和 `public_repo`；
+选择 **Public and private repositories** 或点 **Include private repositories**，则请求 `read:user` 和 `repo`。
 这些 OAuth 范围比单个笔记更广，宿主弹层会在授权前解释。应用发起的每次写入均通过
 宿主精确审阅弹层。选择账户或编辑草稿不会自动提交。响应失败可能导致远端结果未知，
 请先检查 GitHub，再决定是否重新批准。
@@ -61,7 +61,7 @@ OctoSense 中配置的模型及其提供商，包括仓库名称、文件元数�
 
 ## 断开、删除与支持
 
-**Disconnect selected account** 撤销本应用的本地连接句柄，并请求宿主删除对应凭据。
+**Disconnect** 经确认后撤销本应用的本地连接句柄，并请求宿主删除对应凭据。
 它不会撤销 GitHub 端 OAuth 应用授权，也不会删除本地草稿、仓库文件或提交历史。
 提供商侧撤权需在 GitHub 的已授权 OAuth 应用设置中操作。
 应用目前没有“清除全部”按钮；删除草稿需先关闭应用，再使用宿主的数据清除功能或
