@@ -62,7 +62,20 @@ historical sample id, so the test copy carried
   **Approve & Save**, because remote input cannot activate the native approval.
   The 0.2.1 script stops at the same place on that host.
 
+## Release and admission
+
+The [v0.2.2 tag workflow](https://github.com/ymote/octosense-github-notes/actions/runs/37900013646)
+released `e3f1e811` with pack sha256
+`08061d70c4650298ead15ef7fb6b1d10702996fd5063195433ffa8f8e4349ff5`. Native
+publisher unpack/verify and the gate passed on the downloaded pack against
+catalog 14, and an independent review approved the candidate. The
+[publication run](https://github.com/OctoSense-org/OctoSense-App-Hub/actions/runs/37902582113)
+admitted it as public catalog 15
+([App Hub `18cd41d`](https://github.com/OctoSense-org/OctoSense-App-Hub/commit/18cd41d)),
+after a dry run had signed and verified the same payload. The public catalog
+passes native `catalog-verify`, and its 0.2.2 pack equals the release asset.
+
 ## Not verified
 
-Live GitHub OAuth, remote commits, physical approval, installation and update of
-0.2.2 in a packaged macOS host, the 0.2.2 tag workflow, and App Hub admission.
+Live GitHub OAuth, remote commits, physical approval, and installation or update
+of 0.2.2 in a packaged macOS host from the public catalog.

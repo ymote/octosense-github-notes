@@ -4,7 +4,7 @@
 
 在 OctoSense 中使用原生 Rinx 文章编辑器编写 Markdown，重启后保留本地草稿，
 并在保存到 GitHub 前审阅准确的提交内容。发布者：**ymote**。
-新应用 ID：`io.github.ymote.githubnotes`，版本：`0.2.2`（源码；其标签发布尚待进行，最新发布版本仍为 `0.2.1`）。
+新应用 ID：`io.github.ymote.githubnotes`，版本：`0.2.2`。[v0.2.2 发布版](https://github.com/ymote/octosense-github-notes/releases/tag/v0.2.2)已收录于公开 App Hub 目录 15。
 
 这是 **macOS 开发预览候选版**。需要支持 contract 1.8.0／`publisher-github-v1`
 及原生 Markdown 编辑器的兼容 OctoSense 宿主。`desktop-v0.1.0-beta.2`
@@ -16,7 +16,7 @@
 
 请通过 [OctoSense App Hub 的 issue](https://github.com/OctoSense-org/OctoSense-App-Hub/issues)
 申请发布。GitHub 标签产生可验证的发布文件，**不会**自动提交审核或收录。
-管理员将此新 ID 发布到目录前，官方 App Hub 搜索中还没有此新应用。
+管理员逐个版本收录：0.2.0 和 0.2.1 分别进入目录 12 和 13，0.2.2 进入[目录 15](https://github.com/OctoSense-org/OctoSense-App-Hub/commit/18cd41d)。
 
 收录后，在兼容宿主中依次选择 **App Hub → Search → GitHub Notes → Get → Install → Open**。
 安装前检查应用 ID 和权限。
