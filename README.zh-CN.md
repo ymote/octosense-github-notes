@@ -4,7 +4,7 @@
 
 在 OctoSense 中使用原生 Rinx 文章编辑器编写 Markdown，重启后保留本地草稿，
 并在保存到 GitHub 前审阅准确的提交内容。发布者：**ymote**。
-新应用 ID：`io.github.ymote.githubnotes`，版本：`0.2.1`。
+新应用 ID：`io.github.ymote.githubnotes`，版本：`0.2.2`（源码；其标签发布尚待进行，最新发布版本仍为 `0.2.1`）。
 
 这是 **macOS 开发预览候选版**。需要支持 contract 1.8.0／`publisher-github-v1`
 及原生 Markdown 编辑器的兼容 OctoSense 宿主。`desktop-v0.1.0-beta.2`
@@ -23,10 +23,14 @@
 
 1. 在 Source、Split、Preview 中编辑；窄窗口切换 Source 和 Preview。
    样式面板还提供富文本块编辑及撤销、重做。
-2. 文件图标打开 **Repository & file**。通过宿主弹层和外部浏览器连接 GitHub。
+2. 文件图标打开 **Repository & file**。先选择 GitHub Notes 可访问的范围：
+   **Public repositories** 或 **Public and private repositories**，再点 **Connect GitHub**。
+   宿主弹层显示一次性代码，在 github.com/login/device 输入即可。
    宿主运营者需配置启用 device flow 的 GitHub OAuth 客户端；应用包不能包含令牌或密钥。
-3. 选择账户、仓库、分支及 Markdown 文件；**Use as new path** 指定新目标。
-   公共仓库请求 `read:user` + `public_repo`；私有仓库请求更广的 `read:user` + `repo`。
+3. 批准后，账户卡片显示已连接的账户及其访问范围，并自动加载仓库。
+   选择仓库、分支及 Markdown 文件；**Use as new path** 指定新目标。
+   公共仓库请求 `read:user` + `public_repo`；公共及私有仓库请求更广的 `read:user` + `repo`。
+   **Use another account** 切换或添加账户；**Disconnect** 会先确认再断开。
 4. 填写提交信息后点击纸飞机图标，在宿主弹层审阅准确目标和 Markdown。
    仅在返回 commit SHA 后才算保存成功。
 
@@ -63,7 +67,7 @@ Hub 审核与管理员目录批准独立于 GitHub 发布文件。
 ## 证据与限制
 
 编辑器、三个私有读取别名及账户／审阅逻辑沿用旧应用。
-新的源代码及原生证据记录在 [review/0.2.0](review/0.2.0/README.md)和[已验证的 0.2.1 更新](review/0.2.1/README.md)。
+新的源代码及原生证据记录在 [review/0.2.0](review/0.2.0/README.md)、[已验证的 0.2.1 更新](review/0.2.1/README.md)及 [0.2.2 账户界面](review/0.2.2/README.md)。
 原始截图仅含虚构笔记。初步编辑器检查不能证明当前 Shell 的签名安装、
 真实 OAuth、远程写入、物理审批或模型执行。
 

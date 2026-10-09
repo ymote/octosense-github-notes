@@ -1,6 +1,7 @@
 import hashlib
 import json
 from pathlib import Path
+import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,9 +37,18 @@ class ReleaseContract(unittest.TestCase):
         self.assertEqual(set(read('manifest.json')['capabilities']), {'storage', 'auth', 'github'})
         self.assertEqual(read('manifest.json')['network']['hosts'], [])
 
-    def test_editor_and_read_tools_are_unchanged(self):
+    def test_read_tools_are_unchanged(self):
         prior = json.loads((ROOT / 'review/releases/0.1.0/RELEASE.json').read_text())['release_files_sha256']
-        for name in ('main.splash', 'tools.json'):
-            self.assertEqual(hashlib.sha256((BUNDLE / name).read_bytes()).hexdigest(), prior[name], name)
+        self.assertEqual(hashlib.sha256((BUNDLE / 'tools.json').read_bytes()).hexdigest(), prior['tools.json'])
+
+    def test_script_reaches_only_its_known_host_methods_and_scopes(self):
+        # 0.2.2 rewrote the account screen in main.splash. What the script may
+        # ask the host for, and the GitHub scopes it requests, did not change.
+        source = (BUNDLE / 'main.splash').read_text()
+        self.assertEqual(set(re.findall(r'host\.request\("([a-z_.]+)"', source)), {
+            'auth.accounts', 'auth.active', 'auth.connect', 'auth.select', 'auth.disconnect',
+            'github.repositories', 'github.files', 'github.read', 'github.review_save'})
+        self.assertEqual(re.findall(r'scopes = (\[[^\]]*\])', source),
+                         ['["read:user", "public_repo"]', '["read:user", "repo"]'])
 
 if __name__ == '__main__': unittest.main()
