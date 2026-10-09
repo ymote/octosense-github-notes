@@ -4,8 +4,9 @@
 
 Write Markdown with the native Rinx article editor in OctoSense, retain local
 drafts across restart, and review an exact GitHub commit before saving.
-Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.2`
-(source; its tagged release is pending, and `0.2.1` is the latest release).
+Publisher: **ymote**. New app ID: `io.github.ymote.githubnotes`, version `0.2.2`.
+[Release v0.2.2](https://github.com/ymote/octosense-github-notes/releases/tag/v0.2.2)
+is admitted in public App Hub catalog 15.
 
 This is a **macOS development preview candidate**. It requires a compatible
 OctoSense host with contract 1.8.0 / `publisher-github-v1` support and the native
@@ -18,8 +19,9 @@ in the compatible packaged host at `5e1a8414`; the official compatible release r
 Publication is requested through an issue on
 [OctoSense App Hub](https://github.com/OctoSense-org/OctoSense-App-Hub/issues).
 A GitHub tag produces verifiable release assets; it does **not** automatically
-submit or admit the app. Until administrators publish this new ID in the
-catalog, it is not available through the official App Hub search.
+submit or admit the app. Administrators admit each version separately:
+0.2.0 and 0.2.1 entered catalogs 12 and 13, and 0.2.2 entered
+[catalog 15](https://github.com/OctoSense-org/OctoSense-App-Hub/commit/18cd41d).
 
 After admission, use **App Hub → Search → GitHub Notes → Get → Install → Open**
 in a compatible host. Review the app ID and permissions before installing.
